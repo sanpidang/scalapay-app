@@ -16,6 +16,9 @@ export default {
       return req.data
     })
   },
+  getConfig () {
+    return JSON.stringify({ a: 1 })
+  },
   getPosts () {
     return this.execute('get', '/posts')
   },
