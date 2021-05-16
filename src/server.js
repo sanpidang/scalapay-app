@@ -29,15 +29,6 @@ let Post = sequelize.define('posts', {
   body: Sequelize.TEXT
 })
 
-(async () => {
-  await sequelize.sync();
-  const jane = await Config.create({
-    type: "PAY_BY_INSTALLMENT",
-    decription: "Pay over time",
-    minimumAmount: "5.00"
-  });
-  console.log(jane.toJSON());
-})();
 // Initialize finale
 finale.initialize({
   app: app,
@@ -51,7 +42,7 @@ let userResource = finale.resource({
 })
 
 // Resets the database and launches the express app on :8081
-database
+sequelize
   .sync({ force: true })
   .then(() => {
     app.listen(8081, () => {

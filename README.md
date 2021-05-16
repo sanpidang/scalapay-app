@@ -11,6 +11,9 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+# server with restful apis and memory database at localhost:8081
+node src/server.js
+
 # build for production with minification
 npm run build
 
